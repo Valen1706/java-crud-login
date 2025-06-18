@@ -1,17 +1,17 @@
 # Java CRUD + Login System
 
-Este es un proyecto en Java que implementa un sistema de registro, login y operaciones CRUD (Create, Read, Update, Delete) conectados a una base de datos MySQL.
+This is a Java project that implements a registration, login, and CRUD (Create, Read, Update, Delete) system connected to a MySQL database.
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- Registro de nuevos usuarios
-- Login de usuarios
-- Crear datos personales
-- Leer registros por apellido
-- Actualizar registros existentes
-- Eliminar registros por ID
+- User registration
+- User login
+- Create personal data
+- Read records by last name
+- Update existing records
+- Delete records by ID
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Technologies Used
 
 - Java
 - JDBC (Java Database Connectivity)
@@ -19,13 +19,13 @@ Este es un proyecto en Java que implementa un sistema de registro, login y opera
 - IntelliJ IDEA
 - Git + GitHub
 
-## ⚙️ Requisitos
+## ⚙️ Requirements
 
-- JDK 17 o superior
+- JDK 17 or higher
 - MySQL Server
-- IntelliJ IDEA (u otro IDE Java)
+- IntelliJ IDEA (or any Java IDE)
 
-## 📦 Estructura del Proyecto
+## 📦 Project Structure
 
 src/
 ├── main/
@@ -43,13 +43,13 @@ markdown
 Copiar
 Editar
 
-## 🚀 Cómo ejecutar
+## 🚀 How to Run
 
-1. Clonar el repositorio
-2. Crear la base de datos `mydb` en MySQL con la tabla `personal_details` y `userlogin`.
-3. Configurar la conexión en `SQLconnection.java`
-4. Ejecutar `Main.java` desde IntelliJ
+1. Clone the repository
+2. Create the `mydb` database in MySQL with the `personal_details` and `userlogin` tables
+3. Configure the connection in `SQLconnection.java`
+4. Run `Main.java` from IntelliJ
 
-## 📋 Autor
+## 📋 Author
 
 Valen1706
