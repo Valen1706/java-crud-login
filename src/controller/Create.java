@@ -3,6 +3,7 @@ package controller;
 import java.sql.*;
 import java.util.Random;
 import java.util.Scanner;
+import database.SQLconnection;
 
 public class Create {
     Connection conn = SQLconnection.connnectDB();

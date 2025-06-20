@@ -2,6 +2,7 @@ package controller;
 
 import java.sql.*;
 import java.util.Scanner;
+import database.SQLconnection;
 
 public class Registration {
 

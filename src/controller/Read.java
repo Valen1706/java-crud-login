@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 import java.sql.*;
+import database.SQLconnection;
 
 public class Read {
     Connection conn = SQLconnection.connnectDB();

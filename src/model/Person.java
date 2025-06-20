@@ -1,4 +1,47 @@
 package model;
 
+
 public class Person {
+
+    private int id;
+    private String firstN;
+    private String middleN;
+    private String lastN;
+    private String gender;
+    private String address;
+
+    public Person(int id, String firstN, String middleN, String lastN, String gender, String address ){
+        this.id = id;
+        this.firstN = firstN;
+        this.middleN = middleN;
+        this.lastN = lastN;
+        this.gender = gender;
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstname() {
+        return firstN;
+    }
+
+    public String getMiddlename() {
+        return middleN;
+    }
+
+    public String getLastname() {
+        return lastN;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+
 }
