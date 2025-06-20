@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 import java.sql.*;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -44,8 +44,11 @@ public class Update {
                 lastname = rs.getString(4);
                 gender = rs.getString(5);
                 address = rs.getString(6);
-                System.out.println("Firstname\t\t\tMiddlename\t\t\tLastname\t\t\tGender\t\t\tAddress");
-                System.out.println(firstname+"\t\t\t\t"+middlename+"\t\t\t"+lastname+"\t\t\t\t"+gender+"\t\t\t"+address);
+                System.out.printf("%-15s %-15s %-15s %-10s %-30s\n",
+                        "Firstname", "Middlename", "Lastname", "Gender", "Address");
+                System.out.println("---------------------------------------------------------------------------");
+                System.out.printf("%-15s %-15s %-15s %-10s %-30s\n",
+                        firstname, middlename, lastname, gender, address);
 
                 System.out.println();
                 System.out.println("UPDATE INFO");

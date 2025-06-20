@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -32,6 +32,7 @@ public class UserLogin {
                     String firstname = rs.getString("firstname");
                     String lastname = rs.getString("lastname");
                     System.out.println("Login Succesful. Welcome " + firstname + " " + lastname);
+                    authenticate = true;
                     new CRUD_Selection().select();
                 } else {
                     System.out.println("Invalid Username and Password. Please try again. Attempts: " + attempt);

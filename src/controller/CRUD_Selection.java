@@ -1,4 +1,4 @@
-package main;
+package controller;
 
 import java.util.Scanner;
 
@@ -15,15 +15,15 @@ public class CRUD_Selection {
             System.out.println("4. => Delete");
             System.out.println("5. => Exit");
             selected = scanner.nextInt();
-            if(selected > 5){
-                System.out.println("Selection out of range");
-            } else {
-                switch (selected){
-                    case 1 -> new Create().create();
-                    case 2 -> new Read().read();
-                    case 3 -> new Update().update();
-                    case 4 -> new Delete().delete();
-                    case 5 -> new Selection().select();
+
+            switch (selected){
+                case 1 -> new Create().create();
+                case 2 -> new Read().read();
+                case 3 -> new Update().update();
+                case 4 -> new Delete().delete();
+                case 5 -> new Selection().select();
+                default -> {
+                    System.out.println("Selection out of range");
                 }
             }
         }while(true);
