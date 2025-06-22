@@ -28,7 +28,7 @@ This is a Java project that implements a registration, login, and CRUD (Create, 
 ## 📦 Project Structure
 
 src/
-├── main/
+├── controller/
 │ ├── Create.java
 │ ├── Read.java
 │ ├── Update.java
@@ -36,7 +36,7 @@ src/
 │ ├── UserLogin.java
 │ ├── Registration.java
 │ ├── Main.java
-│ ├── SQLconnection.java
+│ ├── database.SQLconnection.java
 │ └── Selection.java
 
 markdown
@@ -47,7 +47,7 @@ Editar
 
 1. Clone the repository
 2. Create the `mydb` database in MySQL with the `personal_details` and `userlogin` tables
-3. Configure the connection in `SQLconnection.java`
+3. Configure the connection in `database.SQLconnection.java`
 4. Run `Main.java` from IntelliJ
 
 ## 📋 Author
