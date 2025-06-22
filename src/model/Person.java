@@ -43,5 +43,28 @@ public class Person {
         return address;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFirstN(String fName) {
+        this.firstN = fName;
+    }
+
+    public void setMiddleN(String mName) {
+        this.middleN = mName;
+    }
+
+    public void setLastN(String lName) {
+        this.lastN = lName;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
 }
