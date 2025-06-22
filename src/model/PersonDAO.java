@@ -44,15 +44,19 @@ public class PersonDAO {
             rs = pstmt.executeQuery();
             while(rs.next()) {
                 person.setId(rs.getInt(1));
-                rs.getString(2);
-                rs.getString(3);
-                rs.getString(4);
+                person.setFirstN(rs.getString(2));
+                person.setMiddleN(rs.getString(3));
+                person.setLastN(rs.getString(4));
+                person.setGender(rs.getString(5));
+                person.setAddress(rs.getString(6));
+
             }
 
             return person;
 
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
+            return null;
         }
     }
 
