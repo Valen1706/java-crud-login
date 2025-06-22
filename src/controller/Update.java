@@ -31,6 +31,7 @@ public class Update {
             System.out.println("==================================================================================");
             System.out.print("Please Enter Id Number of Student to Update:");
             id = scanner.nextInt();
+            System.out.println();
             String sql2 = "SELECT * FROM personal_details WHERE id_number = ?";
             pstmt = conn.prepareStatement(sql2);
             pstmt.setInt(1, id);
