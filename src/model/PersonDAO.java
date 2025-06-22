@@ -16,7 +16,7 @@ public class PersonDAO {
 
     public boolean savePerson(Person person){
         try {
-            String query = "INSERT INTO `personal_details`(`id_number`, `firstname`, `middlename`, `lastname`, `gender`, `address`) VALUES (?,?,?,?,?,?)"
+            String query = "INSERT INTO `personal_details`(`id_number`, `firstname`, `middlename`, `lastname`, `gender`, `address`) VALUES (?,?,?,?,?,?)";
             pstmt = conn.prepareStatement(query);
             pstmt.setInt(1, person.getId());
             pstmt.setString(2, person.getFirstname());
@@ -29,6 +29,7 @@ public class PersonDAO {
 
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
+            return false;
         }
 
 
