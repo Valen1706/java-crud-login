@@ -19,6 +19,16 @@ public class Person {
         this.address = address;
     }
 
+    public Person (String lastN){
+        this.id = 0;
+        this.firstN = "";
+        this.middleN = "";
+        this.lastN = lastN;
+        this.gender = "";
+        this.address = "";
+
+    }
+
     public int getId() {
         return id;
     }

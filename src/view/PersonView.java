@@ -11,8 +11,10 @@ public class PersonView {
     Random num = new Random();
     int min = 100000, max = 999999;
 
-    public Person getPersonInput() {
+    public Person getCreatePersonInput() {
         int id = num.nextInt(max-min+1)+min;
+
+        System.out.println("Complete the following personal detail:");
 
         System.out.println("First Name: ");
         String firstname = scanner.nextLine();
@@ -28,8 +30,16 @@ public class PersonView {
         return new model.Person(id, firstname, middlename, lastname, gender, address);
     }
 
-    public void showSuccessMessage() {
+    public void showCreatedSuccessMessage() {
         System.out.println("Person created successfully!");
+    }
+
+    public Person getReadPersonInput(){
+        System.out.println("Please, Enter Last name");
+        String lastName = scanner.nextLine();
+        return new model.Person(lastName);
+
+
     }
 
 }

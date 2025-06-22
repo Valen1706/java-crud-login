@@ -23,7 +23,7 @@ public class Read {
                 String firstN =  rs.getString(2);
                 String middleN = rs.getString(3);
                 String lastN = rs.getString(4);
-                String name = firstN + " " + middleN+ " " + lastN;
+                String name = firstN + " " + middleN + " " + lastN + " " + lastN + " " + lastN;
                 System.out.println(id + " - " + name);
 
 

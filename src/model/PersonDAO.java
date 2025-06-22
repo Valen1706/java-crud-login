@@ -17,7 +17,7 @@ public class PersonDAO {
     String query = "";
 
 
-    public boolean savePerson(Person person){
+    public boolean saveCreatePerson(Person person){
         try {
             query = "INSERT INTO `personal_details`(`id_number`, `firstname`, `middlename`, `lastname`, `gender`, `address`) VALUES (?,?,?,?,?,?)";
             pstmt = conn.prepareStatement(query);
@@ -36,7 +36,8 @@ public class PersonDAO {
         }
     }
 
-    public Person readPerson(Person person){
+    public boolean saveReadPerson(Person person){
+        boolean success = false;
         try{
             query = "SELECT * FROM personal_details WHERE INSTR(lastname,?)>0";
             pstmt = conn.prepareStatement(query);
@@ -49,14 +50,15 @@ public class PersonDAO {
                 person.setLastN(rs.getString(4));
                 person.setGender(rs.getString(5));
                 person.setAddress(rs.getString(6));
+                success = true;
 
             }
 
-            return person;
+            return success;
 
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
-            return null;
+            return success;
         }
     }
 

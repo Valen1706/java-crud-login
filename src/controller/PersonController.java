@@ -16,10 +16,26 @@ public class PersonController {
     }
 
     public void createPerson() {
-        Person person = view.getPersonInput();
-        boolean success = dao.savePerson(person);
+        Person person = view.getCreatePersonInput();
+        boolean success = dao.saveCreatePerson(person);
         if (success) {
-            view.showSuccessMessage();
+            view.showCreatedSuccessMessage();
+        }
+    }
+
+    public void readPerson(){
+        Person person = view.getReadPersonInput();
+        boolean success = dao.saveReadPerson(person);
+        if (success) {
+            int id = person.getId();
+            String firstN = person.getFirstname();
+            String middleN = person.getMiddlename();
+            String lastN = person.getLastname();
+            String address = person.getAddress();
+
+            String name = firstN + " " + middleN + " " + lastN;
+
+            System.out.println(id + " - " + name + " (" + address + ")");
         }
     }
 }

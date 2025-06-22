@@ -9,7 +9,7 @@ public class CRUD_Selection {
     public static void select(){
         Scanner scanner = new Scanner(System.in);
         UserLogin userLogin = new UserLogin();
-        int selected = -1;
+        int selected;
         do{
             System.out.println("Please Select an Option for CRUD");
             System.out.println("1. => Create");
@@ -23,7 +23,7 @@ public class CRUD_Selection {
 
             switch (selected){
                 case 1 -> new PersonController(conn).createPerson();
-                case 2 -> new Read().read();
+                case 2 -> new PersonController(conn).readPerson();
                 case 3 -> new Update().update();
                 case 4 -> new Delete().delete();
                 case 5 -> new Selection().select();
