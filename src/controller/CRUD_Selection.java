@@ -1,5 +1,8 @@
 package controller;
 
+import database.SQLconnection;
+
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class CRUD_Selection {
@@ -16,8 +19,10 @@ public class CRUD_Selection {
             System.out.println("5. => Exit");
             selected = scanner.nextInt();
 
+            Connection conn = SQLconnection.connnectDB();
+
             switch (selected){
-                case 1 -> new Create().create();
+                case 1 -> new PersonController(conn).createPerson();
                 case 2 -> new Read().read();
                 case 3 -> new Update().update();
                 case 4 -> new Delete().delete();
