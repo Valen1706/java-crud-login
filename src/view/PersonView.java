@@ -2,6 +2,7 @@ package view;
 
 import model.Person;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -38,8 +39,14 @@ public class PersonView {
         System.out.println("Please, Enter Last name");
         String lastName = scanner.nextLine();
         return new model.Person(lastName);
+    }
 
-
+    public void ListOfStudents(ArrayList <Person> students){
+        System.out.println("List of Students");
+        for (Person p : students){
+            System.out.println(p.getId() + " - " + p.getFirstname() + " " + p.getMiddlename() + " " + p.getLastname() + " " + p.getGender() + " " + p.getAddress());
+        }
+        System.out.println("==================================================================================");
     }
 
 }

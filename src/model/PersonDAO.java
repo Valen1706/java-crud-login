@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class PersonDAO {
     private Connection conn;
@@ -59,6 +60,45 @@ public class PersonDAO {
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
             return success;
+        }
+    }
+
+    public ArrayList <Person> getListOfStudents(){
+        ArrayList <Person> list = new ArrayList<>();
+        query = "SELECT * FROM personal_details";
+        /*System.out.println();
+        System.out.println("List of Students");*/
+        try {
+            pstmt = conn.prepareStatement(query);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Person p = new Person();
+                p.setId(rs.getInt(1));
+                p.setFirstN(rs.getString(2));
+                p.setMiddleN(rs.getString(3));
+                p.setLastN(rs.getString(4));
+                p.setGender(rs.getString(5));
+                p.setAddress(rs.getString(6));
+                list.add(p);
+
+
+                //System.out.println(id + " " + firstname + " " + middlename + " " + lastname + " " + gender + " " + address);
+
+            } return list;
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public boolean saveUpdatePerson(Person person){
+        try{
+            query = "SELECT * FROM personal_details";
+
+
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+            return false;
         }
     }
 

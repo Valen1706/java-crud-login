@@ -5,6 +5,7 @@ import model.PersonDAO;
 import view.PersonView;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class PersonController {
     private PersonView view;
@@ -37,5 +38,10 @@ public class PersonController {
 
             System.out.println(id + " - " + name + " (" + address + ")");
         }
+    }
+
+    public void showListOfStudents(){
+        ArrayList <Person> list = dao.getListOfStudents();
+        view.ListOfStudents(list);
     }
 }

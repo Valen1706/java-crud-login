@@ -29,6 +29,16 @@ public class Person {
 
     }
 
+    public Person (){
+        this.id = 0;
+        this.firstN = "";
+        this.middleN = "";
+        this.lastN = "";
+        this.gender = "";
+        this.address = "";
+
+    }
+
     public int getId() {
         return id;
     }
