@@ -24,7 +24,7 @@ public class CRUD_Selection {
             switch (selected){
                 case 1 -> new PersonController(conn).createPerson();
                 case 2 -> new PersonController(conn).readPerson();
-                case 3 -> new Update().update();
+                case 3 -> new PersonController(conn).updatePerson();
                 case 4 -> new Delete().delete();
                 case 5 -> new Selection().select();
                 default -> {

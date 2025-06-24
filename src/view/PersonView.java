@@ -49,4 +49,39 @@ public class PersonView {
         System.out.println("==================================================================================");
     }
 
+
+    public int getIdInput(){
+        System.out.print("Please Enter Id Number of Student to Update:");
+        int id = scanner.nextInt();
+        System.out.println();
+        return id;
+    }
+    public void getUpdatePersonInput(Person person){
+        System.out.printf("%-15s %-15s %-15s %-10s %-30s\n",
+                "Firstname", "Middlename", "Lastname", "Gender", "Address");
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.printf("%-15s %-15s %-15s %-10s %-30s\n",
+                person.getFirstname(), person.getMiddlename(), person.getLastname(), person.getGender(), person.getAddress());
+    }
+
+    public Person getInfoToUpdate(int id){
+        System.out.println("UPDATE INFO");
+        scanner.nextLine();
+        System.out.println("First Name => ");
+        String firstname = scanner.nextLine();
+        System.out.println("Middle Name => ");
+        String middlename = scanner.nextLine();
+        System.out.println("Last Name => ");
+        String lastname = scanner.nextLine();
+        System.out.println("Gender => ");
+        String gender = scanner.nextLine();
+        System.out.println("Address => ");
+        String address = scanner.nextLine();
+        return new model.Person(id, firstname, middlename, lastname, gender, address);
+    }
+
+    public void showMessageIDnotFound(){
+        System.out.println("ID Not Found. Try again\n");
+    }
+
 }

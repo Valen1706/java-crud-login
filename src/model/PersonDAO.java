@@ -1,5 +1,7 @@
 package model;
 
+import controller.PersonController;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -91,16 +93,55 @@ public class PersonDAO {
         }
     }
 
-    public boolean saveUpdatePerson(Person person){
+    public Person selectPersonToUpdate(int id){
         try{
-            query = "SELECT * FROM personal_details";
+            while (true){
+                query = "SELECT * FROM personal_details WHERE id_number = ?";
+                pstmt = conn.prepareStatement(query);
+                pstmt.setInt(1, id);
+                rs = pstmt.executeQuery();
+                if(!rs.next()){
+                    break;
+                } else {
+                    Person person = new Person();
+                    person.setId(rs.getInt(1));
+                    person.setFirstN(rs.getString(2));
+                    person.setMiddleN(rs.getString(3));
+                    person.setLastN(rs.getString(4));
+                    person.setGender(rs.getString(5));
+                    person.setAddress(rs.getString(6));
+                    return person;
+                }
+            }
 
 
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
-            return false;
+            return null;
         }
+        return null;
     }
 
+    public void saveNewDetailUpdate(Person person){
+        try{
+            String sql3 = "UPDATE `personal_details` SET `id_number`=?, `firstname`=?,`middlename`=?,`lastname`=?,`gender`=?,`address`=? WHERE id_number = ?";
+            pstmt = conn.prepareStatement(sql3);
+
+            pstmt.setInt(1, person.getId());
+            pstmt.setString(2, person.getFirstname());
+            pstmt.setString(3, person.getMiddlename());
+            pstmt.setString(4, person.getLastname());
+            pstmt.setString(5, person.getGender());
+            pstmt.setString(6, person.getAddress());
+            pstmt.setInt(7, person.getId());
+
+            pstmt.execute();
+            System.out.println("Datails update successfully");
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
+
+
+    }
 }
 

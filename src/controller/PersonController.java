@@ -44,4 +44,24 @@ public class PersonController {
         ArrayList <Person> list = dao.getListOfStudents();
         view.ListOfStudents(list);
     }
+
+    public void updatePerson(){
+        showListOfStudents();
+
+        int id;
+        Person person;
+
+        do {
+            id = view.getIdInput();
+            person = dao.selectPersonToUpdate(id);
+            if (person == null){
+                view.showMessageIDnotFound();
+            }
+
+        } while (person == null);
+
+        dao.saveNewDetailUpdate(view.getInfoToUpdate(person.getId()));
+    }
+
+
 }
