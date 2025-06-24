@@ -25,18 +25,31 @@ public class PersonController {
     }
 
     public void readPerson(){
-        Person person = view.getReadPersonInput();
-        boolean success = dao.saveReadPerson(person);
-        if (success) {
-            int id = person.getId();
-            String firstN = person.getFirstname();
-            String middleN = person.getMiddlename();
-            String lastN = person.getLastname();
-            String address = person.getAddress();
+        int option;
+        do{
+            option = view.askReadOption();
+            if(option > 2 || option < 1){
+                System.out.println("Number out of range! Try again.");
+            }
 
-            String name = firstN + " " + middleN + " " + lastN;
+        } while (option > 2 || option < 1);
 
-            System.out.println(id + " - " + name + " (" + address + ")");
+        if(option == 1){
+            showListOfStudents();
+        } else {
+            Person person = view.getReadPersonInput();
+            boolean success = dao.saveReadPerson(person);
+            if (success) {
+                int id = person.getId();
+                String firstN = person.getFirstname();
+                String middleN = person.getMiddlename();
+                String lastN = person.getLastname();
+                String address = person.getAddress();
+
+                String name = firstN + " " + middleN + " " + lastN;
+
+                System.out.println(id + " - " + name + " (" + address + ")");
+            }
         }
     }
 

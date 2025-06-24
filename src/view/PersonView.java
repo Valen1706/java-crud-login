@@ -35,6 +35,16 @@ public class PersonView {
         System.out.println("Person created successfully!");
     }
 
+    public int askReadOption(){
+        System.out.println("Choose an option to read:");
+        System.out.println("1- List of students");
+        System.out.println("2- Specific student");
+        int option = scanner.nextInt();
+        scanner.nextLine();
+        return option;
+
+    }
+
     public Person getReadPersonInput(){
         System.out.println("Please, Enter Last name");
         String lastName = scanner.nextLine();
