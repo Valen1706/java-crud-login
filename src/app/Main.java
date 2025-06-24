@@ -1,5 +1,6 @@
-import controller.CRUD_Selection;
-import controller.Selection;
+package app;
+
+import menu.CRUD_Selection;
 
 public class Main {
     public static void main(String[] args) {

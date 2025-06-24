@@ -1,4 +1,7 @@
-package controller;
+package menu;
+
+import auth.Registration;
+import auth.UserLogin;
 
 import java.util.Scanner;
 

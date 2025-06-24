@@ -1,7 +1,9 @@
-package controller;
+package auth;
 
 import java.sql.*;
 import java.util.Scanner;
+
+import menu.Selection;
 import database.SQLconnection;
 
 public class Registration {

@@ -35,7 +35,7 @@ src/
 │ ├── Delete.java
 │ ├── UserLogin.java
 │ ├── Registration.java
-│ ├── Main.java
+│ ├── app.Main.java
 │ ├── database.SQLconnection.java
 │ └── Selection.java
 
@@ -48,7 +48,7 @@ Editar
 1. Clone the repository
 2. Create the `mydb` database in MySQL with the `personal_details` and `userlogin` tables
 3. Configure the connection in `database.SQLconnection.java`
-4. Run `Main.java` from IntelliJ
+4. Run `app.Main.java` from IntelliJ
 
 ## 📋 Author
 
