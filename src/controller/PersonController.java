@@ -55,12 +55,27 @@ public class PersonController {
             id = view.getIdInput();
             person = dao.selectPersonToUpdate(id);
             if (person == null){
-                view.showMessageIDnotFound();
+                view.showMessageUpdateIDnotFound();
             }
 
         } while (person == null);
 
+        view.getUpdatePersonInput(person);
         dao.saveNewDetailUpdate(view.getInfoToUpdate(person.getId()));
+    }
+
+    public void deletePerson(){
+        int id;
+        showListOfStudents();
+        do {
+            id = view.idToDelete();
+            if(!dao.idExist(id)){
+                view.showMessageDeleteIDnotFound();
+            }
+        } while (!dao.idExist(id));
+
+        dao.selectPersontoDelete(id);
+        view.showDeletedSuccessfully();
     }
 
 

@@ -43,6 +43,7 @@ public class PersonView {
 
     public void ListOfStudents(ArrayList <Person> students){
         System.out.println("List of Students");
+        System.out.println("==================================================================================");
         for (Person p : students){
             System.out.println(p.getId() + " - " + p.getFirstname() + " " + p.getMiddlename() + " " + p.getLastname() + " " + p.getGender() + " " + p.getAddress());
         }
@@ -62,6 +63,7 @@ public class PersonView {
         System.out.println("---------------------------------------------------------------------------");
         System.out.printf("%-15s %-15s %-15s %-10s %-30s\n",
                 person.getFirstname(), person.getMiddlename(), person.getLastname(), person.getGender(), person.getAddress());
+        System.out.println();
     }
 
     public Person getInfoToUpdate(int id){
@@ -80,8 +82,23 @@ public class PersonView {
         return new model.Person(id, firstname, middlename, lastname, gender, address);
     }
 
-    public void showMessageIDnotFound(){
+    public void showMessageUpdateIDnotFound(){
         System.out.println("ID Not Found. Try again\n");
+    }
+
+    public int idToDelete(){
+        System.out.println("Please Enter an ID Number to Delete: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        return id;
+    }
+
+    public void showMessageDeleteIDnotFound(){
+        System.out.println("ID Not Found. No record deleted.\n");
+    }
+
+    public void showDeletedSuccessfully(){
+        System.out.println("Record deleted successfully");
     }
 
 }

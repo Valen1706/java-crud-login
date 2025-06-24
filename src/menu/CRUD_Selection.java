@@ -28,7 +28,7 @@ public class CRUD_Selection {
                 case 1 -> new PersonController(conn).createPerson();
                 case 2 -> new PersonController(conn).readPerson();
                 case 3 -> new PersonController(conn).updatePerson();
-                case 4 -> new Delete().delete();
+                case 4 -> new PersonController(conn).deletePerson();
                 case 5 -> new Selection().select();
                 default -> {
                     System.out.println("Selection out of range");

@@ -140,8 +140,34 @@ public class PersonDAO {
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
         }
-
-
     }
+
+    public boolean idExist(int id){
+        try{
+            String query = "SELECT id_number FROM personal_details WHERE id_number = ?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1,id);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public void selectPersontoDelete(int id){
+        try{
+            query = "DELETE FROM personal_details WHERE id_number = ?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1, id);
+            pstmt.execute();
+
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
+    }
+
+
+
 }
 
