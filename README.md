@@ -29,32 +29,29 @@ This is a Java project that implements a user registration, login, and CRUD (Cre
 
 src/
 ├── app/
-│ └── Main.java # Entry point, launches Selection menu
+│ └── Main.jav
 │
 ├── auth/
 │ ├── UserLogin.java # Handles login logic
-│ └── Registration.java # Handles user registration
+│ └── Registration.java
 │
 ├── controller/
-│ └── PersonController.java # Controls CRUD operations for Person
+│ └── PersonController.java
 │
 ├── database/
-│ └── SQLconnection.java # Manages MySQL database connection
+│ └── SQLconnection.java
 │
 ├── menu/
-│ ├── Selection.java # Main menu (Login / Register / Exit)
-│ └── CRUD_Selection.java # CRUD menu after login
+│ ├── Selection.java
+│ └── CRUD_Selection.java
 │
 ├── model/
-│ ├── Person.java # POJO representing a person
-│ └── PersonDAO.java # Handles database operations (DAO)
+│ ├── Person.java
+│ └── PersonDAO.java
 │
 └── view/
-└── PersonView.java # Manages user input/output
+└── PersonView.java
 
-markdown
-Copiar
-Editar
 
 ## 🚀 How to Run
 
