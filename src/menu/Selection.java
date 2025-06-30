@@ -7,18 +7,18 @@ import java.util.Scanner;
 
 public class Selection {
 
-    public static void select(){
+    public static void select() {
         Scanner scanner = new Scanner(System.in);
         UserLogin userLogin = new UserLogin();
         int selected = -1;
-        do{
+        do {
             System.out.println("Please Select an Option");
             System.out.println("1. => UserLogin");
             System.out.println("2. => Registration");
             System.out.println("3. => Exit");
             selected = scanner.nextInt();
 
-            switch (selected){
+            switch (selected) {
                 case 1 -> userLogin.login();
 
                 case 2 -> new Registration().register();
@@ -31,7 +31,7 @@ public class Selection {
                 default -> System.out.println("Invalid option. Please try again.");
 
             }
-        } while(true);
+        } while (true);
 
 
     }

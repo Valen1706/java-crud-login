@@ -1,7 +1,5 @@
 package model;
 
-import controller.PersonController;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
